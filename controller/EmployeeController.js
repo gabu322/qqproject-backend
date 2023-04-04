@@ -21,25 +21,31 @@ module.exports = {
     },
     async getManagers(req, res) {
         const employees = await Employee.findAll({
-            where: {isManager: true}
+            where: { isManager: true }
         })
         return res.json(employees);
     },
     async getManagerByName(req, res) {
         const employees = await Employee.findOne({
-            where: {name: req.params.name}
+            where: { name: req.params.name }
         });
         return res.json(employees);
     },
     async getEmployeeByEmail(req, res) {
         const employee = await Employee.findOne({
-            where: {businessEmail: req.params.businessEmail}
+            where: { businessEmail: req.params.businessEmail }
         });
         return res.json(employee);
     },
     async getEmployeeByRegistration(req, res) {
         const employee = await Employee.findOne({
-            where: {employeeId: req.params.employeeId}
+            where: { employeeId: req.params.employeeId }
+        });
+        return res.json(employee);
+    },
+    async getEmployeeByManager(req, res) {
+        const employee = await Employee.findAll({
+            where: { managerId: req.params.managerId }
         });
         return res.json(employee);
     },

@@ -3,7 +3,7 @@ const sequelize = require("../config/sequelize");
 
 const Vacation = sequelize.define("vacation", {
     employeeId: DataTypes.INTEGER,
-    requestDate: DataTypes.DATE,
+    requestDate: DataTypes.DATEONLY,
     startDate: DataTypes.DATEONLY,
     endDate: DataTypes.DATEONLY,
     state: DataTypes.STRING,
