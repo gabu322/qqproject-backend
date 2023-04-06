@@ -1,11 +1,11 @@
 const {DataTypes} = require("sequelize");
 const sequelize = require("../config/sequelize");
 
-const Vacation = sequelize.define("vacation", {
+const Notification = sequelize.define("notification", {
     employeeId: DataTypes.INTEGER,
     sentDate: DataTypes.DATEONLY,
     state: DataTypes.STRING,
     text: DataTypes.STRING
 })
 
-module.exports = Vacation;
+module.exports = Notification;

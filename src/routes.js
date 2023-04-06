@@ -16,4 +16,8 @@ routes.post('/vacation', VacationController.createVacationRequest)
 routes.get('/vacation/:employeeId', VacationController.getVacationsByEmployee)
 routes.put('/vacation/:id', VacationController.updateVacationsById);
 
+const NotificationController = require("../controller/NotificationController");
+routes.post('/notification', NotificationController.createNotification);
+routes.get('/notification/:employeeId', NotificationController.getNotificationsByEmployeeId);
+
 module.exports = routes;
