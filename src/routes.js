@@ -13,8 +13,9 @@ routes.get('/vacationVerification/:managerId', EmployeeController.getEmployeeByM
 
 const VacationController = require("../controller/VacationController");
 routes.post('/vacation', VacationController.createVacationRequest)
-routes.get('/vacation/:employeeId', VacationController.getVacationsByEmployee)
+routes.get('/vacations/:employeeId', VacationController.getVacationsByEmployee)
 routes.put('/vacation/:id', VacationController.updateVacationsById);
+routes.get('/vacationDate/:date', VacationController.checkIfDateHasVacations);
 
 const NotificationController = require("../controller/NotificationController");
 routes.post('/notification', NotificationController.createNotification);
