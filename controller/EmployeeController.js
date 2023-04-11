@@ -49,5 +49,11 @@ module.exports = {
         });
         return res.json(employee);
     },
+    async getEmployeeById(req, res) {
+        const employee = await Employee.findOne({
+            where: { id: req.params.id }
+        });
+        return res.json(employee);
+    },
 
 }

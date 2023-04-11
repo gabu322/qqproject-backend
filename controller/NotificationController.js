@@ -13,4 +13,14 @@ module.exports = {
         })
         return res.json(notification);
     },
+    async readNotification(req, res) {
+        await Notification.update(req.body,
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        );
+        return res.send("Férias lidas");
+    },
 }

@@ -10,6 +10,7 @@ routes.put('/employeeRegistration/:employeeId', EmployeeController.getCurrentEmp
 routes.get('/employeeRegistration/managers', EmployeeController.getManagers);
 routes.get('/employeeRegistration/managers/:name', EmployeeController.getManagerByName);
 routes.get('/vacationVerification/:managerId', EmployeeController.getEmployeeByManager);
+routes.get('/getEmployeeById/:id', EmployeeController.getEmployeeById);
 
 const VacationController = require("../controller/VacationController");
 routes.post('/vacation', VacationController.createVacationRequest)
@@ -20,5 +21,6 @@ routes.get('/vacationDate/:date', VacationController.checkIfDateHasVacations);
 const NotificationController = require("../controller/NotificationController");
 routes.post('/notification', NotificationController.createNotification);
 routes.get('/notification/:employeeId', NotificationController.getNotificationsByEmployeeId);
+routes.put('/notification/:id', NotificationController.readNotification);
 
 module.exports = routes;

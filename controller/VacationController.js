@@ -25,7 +25,6 @@ module.exports = {
         return res.send("Férias atualizada com sucesso");
     },
     async checkIfDateHasVacations(req, res) {
-        const dateToVerify = new Date(req.params.date)
         const vacations = await Vacation.findAll({
             where: {
                 [Op.and]: [
